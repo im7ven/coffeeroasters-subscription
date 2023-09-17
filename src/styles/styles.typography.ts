@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
+import { darkCyan } from "./styles.utilities";
 
 const baseFont = css`
   font-family: Fraunces, serif;
@@ -102,4 +103,11 @@ export const navItem = styled(Link)`
   line-height: 1.5rem;
   letter-spacing: 0.92rem;
   text-transform: uppercase;
+`;
+
+export const Highlight = styled.p`
+  ${h4}
+  ${darkCyan}
+  display: inline;
+  line-height: 4rem;
 `;
