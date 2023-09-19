@@ -42,9 +42,9 @@ export const greyBg = css`
 // Block
 
 export const block = css`
-max-width: 1280px
-margin-left: auto;
-margin-right: auto;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const flexColumnToRowT = css`
