@@ -79,30 +79,13 @@ export const BodyText = styled.p`
   }
 `;
 
-export const menuItem = styled(Link)`
+export const MenuItem = styled(Link)`
   ${baseFont}
   font-size: 2.4rem;
   line-height: 3.2rem;
   color: #333d4b;
   text-align: center;
-
-  @media screen and (min-width: 768px) {
-    font-family: Barlow, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.5rem;
-    letter-spacing: 0.92rem;
-    text-transform: uppercase;
-  }
-`;
-
-export const navItem = styled(Link)`
-  font-family: Barlow, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.5rem;
-  letter-spacing: 0.92rem;
-  text-transform: uppercase;
+  text-decoration: none;
 `;
 
 export const Highlight = styled.p`
