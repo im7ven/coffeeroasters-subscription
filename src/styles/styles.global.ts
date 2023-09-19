@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 html {
-    font-size: 62.5%
+    font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
@@ -14,7 +14,7 @@ body {
 
 ::selection {
     color:#fff;
-    background-color: ##66D2CF; ;
+    background-color: #66D2CF; ;
 }
 `;
 
