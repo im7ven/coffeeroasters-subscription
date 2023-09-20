@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { darkCyan } from "./styles.utilities";
 
-const baseFont = css`
+export const baseFont = css`
   font-family: Fraunces, serif;
 `;
 
@@ -77,15 +76,6 @@ export const BodyText = styled.p`
     font-size: 1.6rem;
     line-height: 2.6rem;
   }
-`;
-
-export const MenuItem = styled(Link)`
-  ${baseFont}
-  font-size: 2.4rem;
-  line-height: 3.2rem;
-  color: #333d4b;
-  text-align: center;
-  text-decoration: none;
 `;
 
 export const Highlight = styled.p`
