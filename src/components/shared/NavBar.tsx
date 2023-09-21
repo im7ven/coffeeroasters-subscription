@@ -50,12 +50,20 @@ export const NavItem = styled(Link)`
   text-transform: uppercase;
 `;
 
-export const NavBar = () => {
+interface Props {
+  toggleMenu: () => void;
+}
+
+export const NavBar = ({ toggleMenu }: Props) => {
   return (
     <Nav>
       <Logo src={logo} alt="Logo" />
       <Link to="/">
-        <MenuBtn src={hamburgerIcon} alt="Hamburger menu icon" />
+        <MenuBtn
+          onClick={() => toggleMenu()}
+          src={hamburgerIcon}
+          alt="Hamburger menu icon"
+        />
       </Link>
       <NavList>
         <NavItem to="/">Home</NavItem>
