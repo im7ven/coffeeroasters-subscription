@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import hamburgerIcon from "../../../public/images/icon-hamburger.svg";
-import logo from "../../../public/images/logo.svg";
+import hamburgerIcon from "../../images/icon-hamburger.svg";
+import logo from "../../images/logo.svg";
 import { block, darkGreyBlue } from "../../styles/styles.utilities";
 
 const Nav = styled.nav`
