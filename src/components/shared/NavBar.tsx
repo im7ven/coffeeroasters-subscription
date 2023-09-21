@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import hamburgerIcon from "../../images/icon-hamburger.svg";
+import closeIcon from "../../images/icon-close.svg";
 import logo from "../../images/logo.svg";
 import { block, darkGreyBlue } from "../../styles/styles.utilities";
 
@@ -52,16 +53,17 @@ export const NavItem = styled(Link)`
 
 interface Props {
   toggleMenu: () => void;
+  isVisible: boolean;
 }
 
-export const NavBar = ({ toggleMenu }: Props) => {
+export const NavBar = ({ toggleMenu, isVisible }: Props) => {
   return (
     <Nav>
       <Logo src={logo} alt="Logo" />
       <Link to="/">
         <MenuBtn
           onClick={() => toggleMenu()}
-          src={hamburgerIcon}
+          src={isVisible ? closeIcon : hamburgerIcon}
           alt="Hamburger menu icon"
         />
       </Link>
