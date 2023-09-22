@@ -62,7 +62,7 @@ export const BodyText = styled.p`
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 2.5rem;
-  color: ##fefcf7;
+  color: #fefcf7;
 
   &.black {
     color: #333d4b;
