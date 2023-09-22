@@ -2,6 +2,7 @@
 
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
+import { baseFont } from "./styles.typography";
 
 export const darkCyan = css`
   color: #0e8784;
@@ -71,15 +72,20 @@ export const borderRadius = css`
   border-radius: 10px;
 `;
 
-const PrimaryBtn = styled(Link)`
+export const PrimaryBtn = styled(Link)`
   ${lightCream}
   ${darkCyanBg}
-  width: 21.7rem;
-  height: 5.6erm;
   border-radius: 6px;
   border: 0;
   outline: 0;
   cursor: pointer;
+  padding: 1.5rem 3.1rem;
+  text-decoration: none;
+  font-family: Fraunces, serif;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 2.5rem;
 
   .&secondary {
     display: block;
