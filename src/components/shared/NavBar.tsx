@@ -11,6 +11,15 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   position: relative;
+  margin-bottom: 4rem;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 5.3rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 4.4rem;
+  }
 `;
 
 const Logo = styled.img`
