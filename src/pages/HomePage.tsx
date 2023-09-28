@@ -5,6 +5,7 @@ import granEspresso from "../images/home/desktop/image-gran-espresso.png";
 import planto from "../images/home/desktop/image-planalto.png";
 import piccollo from "../images/home/desktop/image-piccollo.png";
 import danche from "../images/home/desktop/image-danche.png";
+import { FeatureBlock } from "../components/home/FeatureBlock";
 
 export const HomePage = () => {
   return (
@@ -31,6 +32,7 @@ export const HomePage = () => {
           Ethiopian hand-harvested blend densely packed with vibrant fruit notes
         </CoffeeProduct>
       </CoffeeCollection>
+      <FeatureBlock />
     </>
   );
 };
