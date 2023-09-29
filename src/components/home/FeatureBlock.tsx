@@ -13,15 +13,18 @@ const FeatureWrapper = styled.section`
   padding: 6.4rem 2.4rem 0;
   height: 90.2rem;
   box-sizing: border-box;
+  margin-top: 12rem;
 
   @media screen and (min-width: 768px) {
     height: 57.4rem;
     padding: 7.1rem 2.4rem 0;
+    margin-top: 14.4rem;
   }
 
   @media screen and (min-width: 1200px) {
     padding: 10rem 2.4rem 0;
     height: 57.8rem;
+    margin-top: 20.4rem;
   }
 `;
 
