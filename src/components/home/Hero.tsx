@@ -56,14 +56,14 @@ const H1 = styled.h1`
 `;
 
 const ButtonWrapper = styled.div`
-  margin-top: 3.9rem;
+  margin-top: 4.6rem;
 
   @media screen and (min-width: 768px) {
-    margin-top: 4rem;
+    margin-top: 5.6rem;
   }
 
   @media screen and (min-width: 1024px) {
-    margin-top: 5.6rem;
+    margin-top: 6.1rem;
   }
 `;
 
