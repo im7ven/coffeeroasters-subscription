@@ -13,7 +13,6 @@ const ProductContainer = styled.section`
   @media screen and (min-width: 768px) {
     gap: 3.6rem;
     text-align: left;
-    padding: 0 5.8rem;
     align-items: start;
   }
 
@@ -21,7 +20,6 @@ const ProductContainer = styled.section`
     flex-direction: column;
     text-align: center;
     gap: 0;
-    padding: 0;
   }
 `;
 
