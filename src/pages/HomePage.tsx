@@ -6,6 +6,7 @@ import planto from "../images/home/desktop/image-planalto.png";
 import piccollo from "../images/home/desktop/image-piccollo.png";
 import danche from "../images/home/desktop/image-danche.png";
 import { FeatureBlock } from "../components/home/FeatureBlock";
+import { ServiceBlock } from "../components/shared/ServiceBlock";
 
 export const HomePage = () => {
   return (
@@ -33,6 +34,7 @@ export const HomePage = () => {
         </CoffeeProduct>
       </CoffeeCollection>
       <FeatureBlock />
+      <ServiceBlock blockHeading="How it works" />
     </>
   );
 };
