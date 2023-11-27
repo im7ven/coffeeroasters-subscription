@@ -7,6 +7,8 @@ import piccollo from "../images/home/desktop/image-piccollo.png";
 import danche from "../images/home/desktop/image-danche.png";
 import { FeatureBlock } from "../components/home/FeatureBlock";
 import { ServiceBlock } from "../components/shared/ServiceBlock";
+import CreatePlanBtn from "../components/shared/CreatePlanBtn";
+import Footer from "../components/shared/Footer";
 
 export const HomePage = () => {
   return (
@@ -35,6 +37,8 @@ export const HomePage = () => {
       </CoffeeCollection>
       <FeatureBlock />
       <ServiceBlock blockHeading="How it works" />
+      <CreatePlanBtn />
+      <Footer />
     </>
   );
 };
