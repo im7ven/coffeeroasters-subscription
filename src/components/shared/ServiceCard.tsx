@@ -3,7 +3,7 @@ import { BodyText, baseFont, h3 } from "../../styles/styles.typography";
 import { paleOrange } from "../../styles/styles.utilities";
 import { ReactNode } from "react";
 
-const CardContainter = styled.section`
+const CardContainer = styled.section`
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -52,12 +52,12 @@ interface Props {
 
 export const ServiceCard = ({ number, heading, children }: Props) => {
   return (
-    <CardContainter>
+    <CardContainer>
       <CardNumber>{number}</CardNumber>
       <CardHeading>{heading}</CardHeading>
       <DescriptionWrapper>
         <BodyText className="black">{children}</BodyText>
       </DescriptionWrapper>
-    </CardContainter>
+    </CardContainer>
   );
 };

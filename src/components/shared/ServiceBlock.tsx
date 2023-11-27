@@ -68,6 +68,8 @@ const GuideWrapper = styled.div`
 `;
 
 const GuideMarks = styled.div`
+  display: none;
+
   @media screen and (min-width: 768px) {
     width: 3.1rem;
     border-radius: 50%;
@@ -77,12 +79,15 @@ const GuideMarks = styled.div`
 `;
 
 const GuideLine = styled.div`
-  ${paleOrangeBg}
-  width: 47rem;
-  height: 1px;
-  position: absolute;
-  top: 50%;
-  z-index: -1;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    ${paleOrangeBg} width: 47rem;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+  }
 
   @media screen and (min-width: 1024px) {
     width: 78rem;
