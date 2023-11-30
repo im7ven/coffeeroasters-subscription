@@ -3,7 +3,7 @@ import styled from "styled-components";
 import hamburgerIcon from "../../images/icon-hamburger.svg";
 import closeIcon from "../../images/icon-close.svg";
 import logo from "../../images/logo.svg";
-import { block, darkGreyBlue } from "../../styles/styles.utilities";
+import { block, darkGreyBlue, grey } from "../../styles/styles.utilities";
 
 const Nav = styled.nav`
   ${block}
@@ -58,6 +58,10 @@ export const NavItem = styled(Link)`
   line-height: 1.5rem;
   letter-spacing: 0.92px;
   text-transform: uppercase;
+
+  &.footer {
+    ${grey}
+  }
 `;
 
 interface Props {
