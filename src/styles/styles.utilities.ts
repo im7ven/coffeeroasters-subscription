@@ -2,8 +2,6 @@
 
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { baseFont } from "./styles.typography";
-
 export const darkCyan = css`
   color: #0e8784;
 `;
