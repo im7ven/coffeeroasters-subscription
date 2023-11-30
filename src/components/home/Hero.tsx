@@ -8,6 +8,7 @@ import { BodyText, h1 } from "../../styles/styles.typography";
 const HeroContainer = styled.section`
   ${borderRadius}
   ${block}
+  box-sizing: border-box;
   display: grid;
   align-items: center;
   position: relative;
