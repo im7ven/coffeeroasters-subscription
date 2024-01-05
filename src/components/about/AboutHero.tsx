@@ -16,6 +16,7 @@ const HeroContainer = styled.section`
   display: grid;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 
   @media screen and (min-width: 768px) {
     text-align: left;
