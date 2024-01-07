@@ -79,6 +79,15 @@ export const BodyText = styled.p`
   }
 `;
 
+export const listText = css`
+  font-family: Barlow, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  margin: 0;
+  color: #333d4b;
+`;
+
 export const Highlight = styled.p`
   ${h4}
   ${darkCyan}
