@@ -38,7 +38,6 @@ export const HomePage = () => {
       <FeatureBlock />
       <ServiceBlock blockHeading="How it works" />
       <CreatePlanBtn />
-      <Footer />
     </>
   );
 };
