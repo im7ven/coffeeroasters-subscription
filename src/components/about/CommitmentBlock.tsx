@@ -78,7 +78,7 @@ const CommitmentBlock = () => {
       </picture>
       <CommitmentDetails>
         <CommitmentHeading>Our Commitment</CommitmentHeading>
-        <BodyText style={{ color: "#333d4b" }}>
+        <BodyText className="black">
           We're built on a simple mission and a commitment to doing good along
           the way. We want to make it easy for you to discover and brew the
           world's best coffee at home. It all starts at the source. To locate
