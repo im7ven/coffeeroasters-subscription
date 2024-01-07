@@ -16,7 +16,7 @@ export const Layout = () => {
     <PagePadding>
       <GlobalStyles />
       <NavBar isVisible={isMenuVisible} toggleMenu={handleMenuVisibility} />
-      <Menu isVisible={isMenuVisible} />
+      <Menu toggleMenu={handleMenuVisibility} isVisible={isMenuVisible} />
       <main>
         <Outlet />
       </main>

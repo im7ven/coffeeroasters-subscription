@@ -51,16 +51,23 @@ export const MenuItem = styled(Link)`
 
 interface Props {
   isVisible: boolean;
+  toggleMenu: () => void;
 }
 
-export const Menu = ({ isVisible }: Props) => {
+export const Menu = ({ isVisible, toggleMenu }: Props) => {
   return (
     <MenuWrapper className={isVisible ? "" : "not-visible"}>
       <MenuContainer>
         <MenuList>
-          <MenuItem to="/">Home</MenuItem>
-          <MenuItem to="about-us"> About Us</MenuItem>
-          <MenuItem to="create-plan">Create Your Plan</MenuItem>
+          <MenuItem onClick={() => toggleMenu()} to="/">
+            Home
+          </MenuItem>
+          <MenuItem onClick={() => toggleMenu()} to="about-us">
+            About Us
+          </MenuItem>
+          <MenuItem onClick={() => toggleMenu()} to="create-plan">
+            Create Your Plan
+          </MenuItem>
         </MenuList>
       </MenuContainer>
     </MenuWrapper>
