@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { baseFont } from "../../styles/styles.typography";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const MenuWrapper = styled.div`
   display: flex;
@@ -55,6 +56,16 @@ interface Props {
 }
 
 export const Menu = ({ isVisible, toggleMenu }: Props) => {
+  useEffect(() => {
+    isVisible
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible");
+
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  });
+
   return (
     <MenuWrapper className={isVisible ? "" : "not-visible"}>
       <MenuContainer>
