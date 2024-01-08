@@ -73,13 +73,11 @@ export const NavBar = ({ toggleMenu, isVisible }: Props) => {
   return (
     <Nav>
       <Logo src={logo} alt="Logo" />
-      <Link to="/">
-        <MenuBtn
-          onClick={() => toggleMenu()}
-          src={isVisible ? closeIcon : hamburgerIcon}
-          alt="Hamburger menu icon"
-        />
-      </Link>
+      <MenuBtn
+        onClick={() => toggleMenu()}
+        src={isVisible ? closeIcon : hamburgerIcon}
+        alt="Hamburger menu icon"
+      />
       <NavList>
         <NavItem to="/">Home</NavItem>
         <NavItem to="about-us">About Us</NavItem>
