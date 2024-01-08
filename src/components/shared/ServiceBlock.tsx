@@ -23,7 +23,7 @@ const ServiceContainer = styled.section`
     margin: 35.1rem auto 0;
   }
 
-  &.about-us {
+  &.plan {
     background-color: #2c343e;
     padding: 7.95rem 2.4rem;
 
@@ -70,6 +70,10 @@ const GuideWrapper = styled.div`
 const GuideMarks = styled.div`
   // display: none;
 
+  &.plan {
+    background: 0;
+  }
+
   @media screen and (min-width: 768px) {
     width: 3.1rem;
     border-radius: 50%;
@@ -80,10 +84,14 @@ const GuideMarks = styled.div`
 `;
 
 const GuideLine = styled.div`
-  // display: none;
+  &.plan {
+    z-index: 1;
+    left: 2%;
+  }
 
   @media screen and (min-width: 768px) {
-    ${paleOrangeBg} width: 47rem;
+    ${paleOrangeBg}
+    width: 47rem;
     height: 1px;
     position: absolute;
     top: 50%;
@@ -92,7 +100,7 @@ const GuideLine = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    width: 78rem;
+    width: 75rem;
   }
 `;
 
@@ -130,32 +138,33 @@ const ServiceCardWrapper = styled.div`
 interface Props {
   blockHeading?: string;
   button?: ReactNode;
+  theme?: string;
 }
 
-export const ServiceBlock = ({ blockHeading, button }: Props) => {
+export const ServiceBlock = ({ blockHeading, button, theme }: Props) => {
   return (
-    <ServiceContainer>
+    <ServiceContainer className={theme}>
       <HeadingGuideWrapper>
         <ServiceHeading>{blockHeading}</ServiceHeading>
         <GuideWrapper>
-          <GuideMarks />
-          <GuideMarks />
-          <GuideMarks />
-          <GuideLine />
+          <GuideMarks className={theme} />
+          <GuideMarks className={theme} />
+          <GuideMarks className={theme} />
+          <GuideLine className={theme} />
         </GuideWrapper>
       </HeadingGuideWrapper>
       <ServiceCardWrapper>
-        <ServiceCard heading="Pick your coffee" number="01">
+        <ServiceCard theme={theme} heading="Pick your coffee" number="01">
           Select from our evolving range of artisan coffees. Our beans are
           ethically sourced and we pay fair prices for them. There are new
           coffees in all profiles every month for you to try out.
         </ServiceCard>
-        <ServiceCard heading="Choose the frequency" number="02">
+        <ServiceCard theme={theme} heading="Choose the frequency" number="02">
           Customize your order frequency, quantity, even your roast style and
           grind type. Pause, skip or cancel your subscription with no commitment
           through our online portal.
         </ServiceCard>
-        <ServiceCard heading="Receive and enjoy!" number="03">
+        <ServiceCard theme={theme} heading="Receive and enjoy!" number="03">
           We ship your package within 48 hours, freshly roasted. Sit back and
           enjoy award-winning world-class coffees curated to provide a distinct
           tasting experience.

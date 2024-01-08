@@ -35,7 +35,7 @@ export const HomePage = () => {
         </CoffeeProduct>
       </CoffeeCollection>
       <FeatureBlock />
-      <ServiceBlock blockHeading="How it works" />
+      <ServiceBlock theme="black" blockHeading="How it works" />
       <CreatePlanBtn />
     </>
   );

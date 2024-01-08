@@ -27,6 +27,10 @@ const CardHeading = styled.h3`
   ${h3}
   margin:0;
 
+  &.plan {
+    color: #fff;
+  }
+
   @media screen and (min-width: 768px) {
     max-width: 23rem;
   }
@@ -48,15 +52,16 @@ interface Props {
   number: string;
   heading: ReactNode;
   children: string;
+  theme?: string;
 }
 
-export const ServiceCard = ({ number, heading, children }: Props) => {
+export const ServiceCard = ({ number, heading, children, theme }: Props) => {
   return (
     <CardContainer>
       <CardNumber>{number}</CardNumber>
-      <CardHeading>{heading}</CardHeading>
+      <CardHeading className={theme}>{heading}</CardHeading>
       <DescriptionWrapper>
-        <BodyText className="black">{children}</BodyText>
+        <BodyText className={theme}>{children}</BodyText>
       </DescriptionWrapper>
     </CardContainer>
   );
