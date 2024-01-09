@@ -79,6 +79,13 @@ export const BodyText = styled.p`
   }
 `;
 
+const selectionCardInfo = css`
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: 400;
+  font-family: Barlow, sans-serif;
+`;
+
 export const listText = css`
   font-family: Barlow, sans-serif;
   font-size: 1.6rem;
