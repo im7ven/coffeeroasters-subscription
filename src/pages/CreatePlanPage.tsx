@@ -1,4 +1,5 @@
 import PlanHero from "../components/create-plan/PlanHero";
+import SelectionCardBlock from "../components/create-plan/SelectionCardBlock";
 import { ServiceBlock } from "../components/shared/ServiceBlock";
 
 const CreatePlanPage = () => {
@@ -6,6 +7,7 @@ const CreatePlanPage = () => {
     <>
       <PlanHero />
       <ServiceBlock theme="plan" />
+      <SelectionCardBlock />
     </>
   );
 };
