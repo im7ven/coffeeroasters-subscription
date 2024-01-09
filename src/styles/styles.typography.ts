@@ -79,7 +79,7 @@ export const BodyText = styled.p`
   }
 `;
 
-const selectionCardInfo = css`
+export const selectionCardInfo = css`
   font-size: 1.6rem;
   line-height: 2.6rem;
   font-weight: 400;
