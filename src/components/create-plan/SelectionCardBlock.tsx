@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import {
   borderRadius,
+  darkCyanBg,
   darkGreyBlue,
+  flexColumnToRowT,
+  grey,
+  lightGreyBg,
   paleOrangeBg,
 } from "../../styles/styles.utilities";
 import { h4, selectionCardInfo } from "../../styles/styles.typography";
@@ -13,34 +17,55 @@ const HeadingWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 6.9rem;
 `;
 
 const BlockHeading = styled.h3`
   ${h4}
+  ${grey}
 `;
 
 const ArrowIcon = styled.img``;
 
 const CardContainer = styled.div`
   ${borderRadius}
-  ${darkGreyBlue}
+  ${lightGreyBg}
   padding: 2.4rem 2.5rem;
 
   &:hover {
     ${paleOrangeBg}
   }
+
+  &.active {
+    ${darkCyanBg}
+    color: #fff;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 25rem;
+    padding: 0 2.45rem;
+  }
 `;
 
 const CardWrapper = styled.div`
-  display: flex;
+  ${flexColumnToRowT}
+  gap: 1.6rem;
 `;
 
 const CardHeading = styled.h4`
   ${h4}
+  ${darkGreyBlue}
+  margin: 0 0 .8rem 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 3.2rem 0 2.4rem;
+  }
 `;
 
 const CardDescription = styled.p`
   ${selectionCardInfo}
+  ${darkGreyBlue}
+  margin: 0;
 `;
 
 interface Props {
