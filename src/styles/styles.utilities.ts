@@ -38,6 +38,14 @@ export const greyBg = css`
   background-color: #83888f;
 `;
 
+export const lightGrey = css`
+  color: #f4f1be;
+`;
+
+export const lightGreyBg = css`
+  color: #f4f1be;
+`;
+
 // Block
 
 export const block = css`
