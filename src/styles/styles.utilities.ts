@@ -39,11 +39,11 @@ export const greyBg = css`
 `;
 
 export const lightGrey = css`
-  color: #f4f1be;
+  color: #f4f1eb;
 `;
 
 export const lightGreyBg = css`
-  color: #f4f1be;
+  background-color: #f4f1eb;
 `;
 
 // Block
