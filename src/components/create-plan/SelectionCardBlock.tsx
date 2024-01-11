@@ -10,6 +10,8 @@ import {
 } from "../../styles/styles.utilities";
 import { h4, selectionCardInfo } from "../../styles/styles.typography";
 import arrowIcon from "../../images/plan/desktop/icon-arrow.svg";
+import SelectionCard from "./SelectionCard";
+import { useState } from "react";
 
 const SelectionContainer = styled.section``;
 
@@ -25,47 +27,17 @@ const BlockHeading = styled.h3`
   ${grey}
 `;
 
-const ArrowIcon = styled.img``;
+const ArrowIcon = styled.img`
+  transition: 0.3s;
 
-const CardContainer = styled.div`
-  ${borderRadius}
-  ${lightGreyBg}
-  padding: 2.4rem 2.5rem;
-
-  &:hover {
-    ${paleOrangeBg}
-  }
-
-  &.active {
-    ${darkCyanBg}
-    color: #fff;
-  }
-
-  @media screen and (min-width: 768px) {
-    height: 25rem;
-    padding: 0 2.45rem;
+  &.expanded {
+    transform: rotate(180deg);
   }
 `;
 
 const CardWrapper = styled.div`
   ${flexColumnToRowT}
   gap: 1.6rem;
-`;
-
-const CardHeading = styled.h4`
-  ${h4}
-  ${darkGreyBlue}
-  margin: 0 0 .8rem 0;
-
-  @media screen and (min-width: 768px) {
-    margin: 3.2rem 0 2.4rem;
-  }
-`;
-
-const CardDescription = styled.p`
-  ${selectionCardInfo}
-  ${darkGreyBlue}
-  margin: 0;
 `;
 
 interface Props {
@@ -75,32 +47,55 @@ interface Props {
 }
 
 const SelectionCardBlock = () => {
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleActivation = (cardId: number) => {
+    setActiveCard(cardId);
+  };
+
+  const handleVisibility = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <SelectionContainer>
       <HeadingWrapper>
         <BlockHeading>How much would you like?</BlockHeading>
-        <ArrowIcon src={arrowIcon} />
+        <ArrowIcon
+          className={isExpanded ? "expanded" : ""}
+          onClick={() => handleVisibility()}
+          src={arrowIcon}
+        />
       </HeadingWrapper>
-      <CardWrapper>
-        <CardContainer>
-          <CardHeading>Single Origin</CardHeading>
-          <CardDescription>
-            Distinct, high quality coffee from a specific family-owned farm
-          </CardDescription>
-        </CardContainer>
-        <CardContainer>
-          <CardHeading>Single Origin</CardHeading>
-          <CardDescription>
-            Distinct, high quality coffee from a specific family-owned farm
-          </CardDescription>
-        </CardContainer>
-        <CardContainer>
-          <CardHeading>Single Origin</CardHeading>
-          <CardDescription>
-            Distinct, high quality coffee from a specific family-owned farm
-          </CardDescription>
-        </CardContainer>
-      </CardWrapper>
+      {isExpanded && (
+        <CardWrapper>
+          <SelectionCard
+            cardHeading="Capsule"
+            cardId={1}
+            onActive={handleActivation}
+            isActive={activeCard === 1}
+          >
+            Compatible with Nespresso systems and similar brewers
+          </SelectionCard>
+          <SelectionCard
+            cardHeading="Capsule"
+            cardId={2}
+            onActive={handleActivation}
+            isActive={activeCard === 2}
+          >
+            Compatible with Nespresso systems and similar brewers
+          </SelectionCard>
+          <SelectionCard
+            cardHeading="Capsule"
+            cardId={3}
+            onActive={handleActivation}
+            isActive={activeCard === 3}
+          >
+            Compatible with Nespresso systems and similar brewers
+          </SelectionCard>
+        </CardWrapper>
+      )}
     </SelectionContainer>
   );
 };
