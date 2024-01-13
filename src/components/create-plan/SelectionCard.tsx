@@ -5,7 +5,6 @@ import {
   lightGreyBg,
   paleOrangeBg,
   darkCyanBg,
-  flexColumnToRowT,
   darkGreyBlue,
 } from "../../styles/styles.utilities";
 
@@ -13,6 +12,7 @@ const CardContainer = styled.div`
   ${borderRadius}
   ${lightGreyBg}
   padding: 2.4rem 2.5rem;
+  cursor: pointer;
 
   &:hover {
     ${paleOrangeBg}

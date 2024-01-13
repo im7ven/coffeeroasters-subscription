@@ -1,11 +1,23 @@
 import styled, { css } from "styled-components";
-import SelectionCardBlock from "./SelectionCardBlock";
+import SelectionCardBlock from "./PreferenceBlock";
+import {
+  PhaseOneData,
+  PhaseTwoData,
+  PhaseThreeData,
+  PhaseFourData,
+  PhaseFiveData,
+} from "./PlanData";
 import {
   block,
   darkCyan,
   darkGreyBlue,
   grey,
 } from "../../styles/styles.utilities";
+import PreferenceBlock from "./PreferenceBlock";
+import BeanTypeBlock from "./BeanTypeBlock";
+import QualityBlock from "./QualityBlock";
+import GrindOptionBlock from "./GrindOptionBlock";
+import DeliveryBlock from "./DeliveryBlock";
 
 const PlanBlockContainer = styled.div`
   ${block}
@@ -103,11 +115,11 @@ const PlanBlock = () => {
           <ProgressPhase>Deliveries</ProgressPhase>
         </ProgressState>
       </SelectionProgressionWrapper>
-      <SelectionCardBlock />
-      <SelectionCardBlock />
-      <SelectionCardBlock />
-      <SelectionCardBlock />
-      <SelectionCardBlock />
+      <PreferenceBlock />
+      <BeanTypeBlock />
+      <QualityBlock />
+      <GrindOptionBlock />
+      <DeliveryBlock />
     </PlanBlockContainer>
   );
 };

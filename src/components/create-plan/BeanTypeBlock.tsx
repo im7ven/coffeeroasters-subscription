@@ -1,52 +1,15 @@
-import styled from "styled-components";
-import {
-  borderRadius,
-  darkCyanBg,
-  darkGreyBlue,
-  flexColumnToRowT,
-  grey,
-  lightGreyBg,
-  paleOrangeBg,
-} from "../../styles/styles.utilities";
-import { h4, selectionCardInfo } from "../../styles/styles.typography";
-import arrowIcon from "../../images/plan/desktop/icon-arrow.svg";
-import SelectionCard from "./SelectionCard";
 import { useState } from "react";
+import arrowIcon from "../../images/plan/desktop/icon-arrow.svg";
+import {
+  ArrowIcon,
+  BlockHeading,
+  CardWrapper,
+  HeadingWrapper,
+  SelectionContainer,
+} from "../../styles/styles.plan-block";
+import SelectionCard from "./SelectionCard";
 
-const SelectionContainer = styled.section``;
-
-const HeadingWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 6.9rem;
-`;
-
-const BlockHeading = styled.h3`
-  ${h4}
-  ${grey}
-`;
-
-const ArrowIcon = styled.img`
-  transition: 0.3s;
-
-  &.expanded {
-    transform: rotate(180deg);
-  }
-`;
-
-const CardWrapper = styled.div`
-  ${flexColumnToRowT}
-  gap: 1.6rem;
-`;
-
-interface Props {
-  blockHeading: string;
-  cardHeading: string;
-  description: string;
-}
-
-const SelectionCardBlock = () => {
+const BeanTypeBlock = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -61,7 +24,7 @@ const SelectionCardBlock = () => {
   return (
     <SelectionContainer>
       <HeadingWrapper>
-        <BlockHeading>How much would you like?</BlockHeading>
+        <BlockHeading>What type of coffee?</BlockHeading>
         <ArrowIcon
           className={isExpanded ? "expanded" : ""}
           onClick={() => handleVisibility()}
@@ -71,28 +34,28 @@ const SelectionCardBlock = () => {
       {isExpanded && (
         <CardWrapper>
           <SelectionCard
-            cardHeading="Capsule"
+            cardHeading="Single Origin"
             cardId={1}
             onActive={handleActivation}
             isActive={activeCard === 1}
           >
-            Compatible with Nespresso systems and similar brewers
+            Distinct, high quality coffee from a specific family-owned farm
           </SelectionCard>
           <SelectionCard
-            cardHeading="Capsule"
+            cardHeading="Decaf"
             cardId={2}
             onActive={handleActivation}
             isActive={activeCard === 2}
           >
-            Compatible with Nespresso systems and similar brewers
+            Just like regular coffee, except the caffeine has been removed
           </SelectionCard>
           <SelectionCard
-            cardHeading="Capsule"
+            cardHeading="Blended"
             cardId={3}
             onActive={handleActivation}
             isActive={activeCard === 3}
           >
-            Compatible with Nespresso systems and similar brewers
+            Combination of two or three dark roasted beans of organic coffees
           </SelectionCard>
         </CardWrapper>
       )}
@@ -100,4 +63,4 @@ const SelectionCardBlock = () => {
   );
 };
 
-export default SelectionCardBlock;
+export default BeanTypeBlock;
