@@ -8,13 +8,22 @@ import {
   SelectionContainer,
 } from "../../styles/styles.plan-block";
 import SelectionCard from "./SelectionCard";
+import { useSelection } from "../../context/SelectionCardContect";
 
 const BeanTypeBlock = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const { selection, setSelection } = useSelection();
 
   const handleActivation = (cardId: number) => {
     setActiveCard(cardId);
+    if (cardId === 1) {
+      setSelection({ ...selection, bean: "Single Origin" });
+    } else if (cardId === 2) {
+      setSelection({ ...selection, bean: "Decaf" });
+    } else {
+      setSelection({ ...selection, bean: "Blended" });
+    }
   };
 
   const handleVisibility = () => {

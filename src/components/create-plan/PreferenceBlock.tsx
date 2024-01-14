@@ -8,18 +8,30 @@ import {
   SelectionContainer,
 } from "../../styles/styles.plan-block";
 import SelectionCard from "./SelectionCard";
+import { useSelection } from "../../context/SelectionCardContect";
 
 const PreferenceBlock = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const { selection, setSelection } = useSelection();
 
   const handleActivation = (cardId: number) => {
     setActiveCard(cardId);
+    if (cardId === 1) {
+      setSelection({ ...selection, preference: "Capsule" });
+    } else if (cardId === 2) {
+      setSelection({ ...selection, preference: "Filter" });
+    } else {
+      setSelection({ ...selection, preference: "Espresso" });
+    }
   };
 
   const handleVisibility = () => {
     setIsExpanded(!isExpanded);
   };
+
+  console.log(selection);
+  console.log(activeCard);
 
   return (
     <SelectionContainer>

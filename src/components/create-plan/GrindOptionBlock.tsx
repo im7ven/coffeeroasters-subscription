@@ -8,13 +8,22 @@ import {
   SelectionContainer,
 } from "../../styles/styles.plan-block";
 import SelectionCard from "./SelectionCard";
+import { useSelection } from "../../context/SelectionCardContect";
 
 const GrindOptionBlock = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const { selection, setSelection } = useSelection();
 
   const handleActivation = (cardId: number) => {
     setActiveCard(cardId);
+    if (cardId === 1) {
+      setSelection({ ...selection, quantity: "Wholebean" });
+    } else if (cardId === 2) {
+      setSelection({ ...selection, quantity: "Filter" });
+    } else {
+      setSelection({ ...selection, quantity: "Cafetiere" });
+    }
   };
 
   const handleVisibility = () => {

@@ -4,6 +4,7 @@ import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import CreatePlanPage from "./pages/CreatePlanPage";
 import ScrollToTop from "./components/shared/ScrollToTop";
+import { SelectionCardContextProvider } from "./context/SelectionCardContect";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,14 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <HomePage /> },
       { path: "/about-us", element: <AboutPage /> },
-      { path: "/create-plan", element: <CreatePlanPage /> },
+      {
+        path: "/create-plan",
+        element: (
+          <SelectionCardContextProvider>
+            <CreatePlanPage />
+          </SelectionCardContextProvider>
+        ),
+      },
     ],
   },
 ]);

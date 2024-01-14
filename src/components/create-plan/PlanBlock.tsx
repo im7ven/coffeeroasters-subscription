@@ -15,7 +15,7 @@ import {
 } from "../../styles/styles.utilities";
 import PreferenceBlock from "./PreferenceBlock";
 import BeanTypeBlock from "./BeanTypeBlock";
-import QualityBlock from "./QualityBlock";
+import QualityBlock from "./QuantityBlock";
 import GrindOptionBlock from "./GrindOptionBlock";
 import DeliveryBlock from "./DeliveryBlock";
 

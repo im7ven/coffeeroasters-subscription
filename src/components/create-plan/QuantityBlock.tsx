@@ -8,13 +8,22 @@ import {
   SelectionContainer,
 } from "../../styles/styles.plan-block";
 import SelectionCard from "./SelectionCard";
+import { useSelection } from "../../context/SelectionCardContect";
 
-const QualityBlock = () => {
+const QuantityBlock = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const { selection, setSelection } = useSelection();
 
   const handleActivation = (cardId: number) => {
     setActiveCard(cardId);
+    if (cardId === 1) {
+      setSelection({ ...selection, quantity: "250g" });
+    } else if (cardId === 2) {
+      setSelection({ ...selection, quantity: "500g" });
+    } else {
+      setSelection({ ...selection, quantity: "1000g" });
+    }
   };
 
   const handleVisibility = () => {
@@ -64,4 +73,4 @@ const QualityBlock = () => {
   );
 };
 
-export default QualityBlock;
+export default QuantityBlock;
