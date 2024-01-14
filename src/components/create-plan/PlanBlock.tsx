@@ -1,40 +1,41 @@
 import styled, { css } from "styled-components";
-import SelectionCardBlock from "./PreferenceBlock";
-import {
-  PhaseOneData,
-  PhaseTwoData,
-  PhaseThreeData,
-  PhaseFourData,
-  PhaseFiveData,
-} from "./PlanData";
 import {
   block,
   darkCyan,
   darkGreyBlue,
   grey,
 } from "../../styles/styles.utilities";
-import PreferenceBlock from "./PreferenceBlock";
 import BeanTypeBlock from "./BeanTypeBlock";
-import QualityBlock from "./QuantityBlock";
-import GrindOptionBlock from "./GrindOptionBlock";
 import DeliveryBlock from "./DeliveryBlock";
+import GrindOptionBlock from "./GrindOptionBlock";
+import PreferenceBlock from "./PreferenceBlock";
+import QualityBlock from "./QuantityBlock";
 
 const PlanBlockContainer = styled.div`
   ${block}
-  display: none;
+  margin-top: 10.9rem;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 14.4rem;
+  }
 
   @media screen and (min-width: 1024px) {
     display: grid;
     grid-template-columns: 46.5rem 1fr;
     grid-template-rows: auto;
+    margin-top: 16.8rem;
   }
 `;
 
 const SelectionProgressionWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-left: 8.5rem;
-  grid-row: span 5;
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    padding-left: 8.5rem;
+    grid-row: span 5;
+  }
 `;
 
 const ProgressState = styled.div`

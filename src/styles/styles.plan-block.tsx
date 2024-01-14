@@ -1,8 +1,18 @@
 import styled from "styled-components";
 import { flexColumnToRowT, grey } from "./styles.utilities";
-import { h4 } from "./styles.typography";
+import { h2 } from "./styles.typography";
 
-export const SelectionContainer = styled.section``;
+export const SelectionContainer = styled.section`
+  margin-bottom: 11.2rem;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 10rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 8.8rem;
+  }
+`;
 
 export const HeadingWrapper = styled.div`
   display: flex;
@@ -12,8 +22,14 @@ export const HeadingWrapper = styled.div`
 `;
 
 export const BlockHeading = styled.h3`
-  ${h4}
+  ${h2}
   ${grey}
+  font-size: 2.4rem;
+  margin: 0;
+
+  // @media screen and (min-width: 1024px) {
+  //   margin: 2.4rem 0 5.6rem;
+  // }
 `;
 
 export const ArrowIcon = styled.img`
@@ -27,4 +43,5 @@ export const ArrowIcon = styled.img`
 export const CardWrapper = styled.div`
   ${flexColumnToRowT}
   gap: 1.6rem;
+  padding-top: 5.6rem;
 `;
