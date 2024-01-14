@@ -12,7 +12,7 @@ import { useSelection } from "../../context/SelectionCardContect";
 
 const PreferenceBlock = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const { selection, setSelection } = useSelection();
 
   const handleActivation = (cardId: number) => {
