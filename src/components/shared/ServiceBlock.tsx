@@ -26,12 +26,15 @@ const ServiceContainer = styled.section`
   &.plan {
     background-color: #2c343e;
     padding: 7.95rem 2.4rem;
+    margin: 12rem auto 0;
 
     @media screen and (min-width: 768px) {
       padding: 9.65rem 4rem;
+      margin: 14.4rem auto 0;
     }
     @media screen and (min-width: 768px) {
       padding: 10rem 8.5rem;
+      margin: 16.8rem auto 0;
     }
   }
 `;
