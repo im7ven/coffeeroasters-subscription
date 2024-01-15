@@ -18,9 +18,9 @@ const PreferenceBlock = () => {
   const handleActivation = (cardId: number) => {
     setActiveCard(cardId);
     if (cardId === 1) {
-      setSelection({ ...selection, preference: "Capsule" });
+      setSelection({ ...selection, preference: "Using Capsule" });
     } else if (cardId === 2) {
-      setSelection({ ...selection, preference: "Filter" });
+      setSelection({ ...selection, preference: "as Filter" });
     } else {
       setSelection({ ...selection, preference: "Espresso" });
     }
