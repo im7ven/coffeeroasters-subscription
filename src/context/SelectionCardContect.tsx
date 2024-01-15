@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 
-interface Selection {
+export interface Selection {
   preference: string;
   bean: string;
   quantity: string;
@@ -35,11 +35,11 @@ export const SelectionCardContextProvider = ({ children }: Props) => {
   // const [grind, setGrind] = useState("");
   // const [delivery, setDelivery] = useState("");
   const [selection, setSelection] = useState<Selection>({
-    preference: "",
-    bean: "",
-    quantity: "",
-    grind: "",
-    delivery: "",
+    preference: "_____",
+    bean: "_____",
+    quantity: "_____",
+    grind: "_____",
+    delivery: "_____",
   });
 
   const selectionCardContextValue: SelectionCardContextValue = {
