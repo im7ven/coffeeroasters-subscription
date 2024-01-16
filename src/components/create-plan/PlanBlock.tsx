@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import {
+  PrimaryBtn,
   block,
   darkCyan,
   darkGreyBlue,
@@ -10,6 +11,8 @@ import DeliveryBlock from "./DeliveryBlock";
 import GrindOptionBlock from "./GrindOptionBlock";
 import PreferenceBlock from "./PreferenceBlock";
 import QualityBlock from "./QuantityBlock";
+import OrderSummary from "./OrderSummary";
+import { useSelection } from "../../context/SelectionCardContect";
 
 const PlanBlockContainer = styled.div`
   ${block}
@@ -34,7 +37,7 @@ const SelectionProgressionWrapper = styled.div`
     display: flex;
     flex-direction: column;
     padding-left: 8.5rem;
-    grid-row: span 5;
+    grid-row: span 7;
   }
 `;
 
@@ -75,6 +78,10 @@ const ProgressNumber = styled.p`
     opacity: 1;
     ${grey}
   }
+
+  &.disabled {
+    opacity: 0.4;
+  }
 `;
 
 const ProgressPhase = styled.p`
@@ -87,11 +94,21 @@ const ProgressPhase = styled.p`
   }
 
   &.disabled {
-    opacity: 0.5;
+    opacity: 0.4;
   }
 `;
 
 const PlanBlock = () => {
+  const { selection, shipmentPrice } = useSelection();
+
+  const handleCalculate = () => {
+    console.log(
+      (shipmentPrice.increment * shipmentPrice.incrementMultiplier +
+        shipmentPrice.base) *
+        shipmentPrice.multiplier
+    );
+  };
+
   return (
     <PlanBlockContainer>
       <SelectionProgressionWrapper>
@@ -108,8 +125,16 @@ const PlanBlock = () => {
           <ProgressPhase>Quantity</ProgressPhase>
         </ProgressState>
         <ProgressState>
-          <ProgressNumber>04</ProgressNumber>
-          <ProgressPhase>Grind Option</ProgressPhase>
+          <ProgressNumber
+            className={selection.preference === "Capsules" ? "disabled" : ""}
+          >
+            04
+          </ProgressNumber>
+          <ProgressPhase
+            className={selection.preference === "Capsules" ? "disabled" : ""}
+          >
+            Grind Option
+          </ProgressPhase>
         </ProgressState>
         <ProgressState className="last-phase">
           <ProgressNumber>05</ProgressNumber>
@@ -121,6 +146,11 @@ const PlanBlock = () => {
       <QualityBlock />
       <GrindOptionBlock />
       <DeliveryBlock />
+      <OrderSummary {...selection} />
+      <PrimaryBtn className="plan" to="/about-us">
+        create my plan!
+      </PrimaryBtn>
+      <button onClick={() => handleCalculate()}>Calculate Total</button>
     </PlanBlockContainer>
   );
 };

@@ -93,7 +93,7 @@ export const PrimaryBtn = styled(Link)`
   font-weight: 900;
   line-height: 2.5rem;
 
-  .&secondary {
+  &.secondary {
     display: block;
     width: 100%;
   }

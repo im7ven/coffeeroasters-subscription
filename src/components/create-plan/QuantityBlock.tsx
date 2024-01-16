@@ -13,16 +13,20 @@ import { useSelection } from "../../context/SelectionCardContect";
 const QuantityBlock = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
-  const { selection, setSelection } = useSelection();
+  const { selection, setSelection, setShipmentPrice, shipmentPrice } =
+    useSelection();
 
   const handleActivation = (cardId: number) => {
     setActiveCard(cardId);
     if (cardId === 1) {
       setSelection({ ...selection, quantity: "250g" });
+      setShipmentPrice({ ...shipmentPrice, base: 7.2, increment: 2.4 });
     } else if (cardId === 2) {
       setSelection({ ...selection, quantity: "500g" });
+      setShipmentPrice({ ...shipmentPrice, base: 13.0, increment: 4.5 });
     } else {
       setSelection({ ...selection, quantity: "1000g" });
+      setShipmentPrice({ ...shipmentPrice, base: 22.0, increment: 10 });
     }
   };
 

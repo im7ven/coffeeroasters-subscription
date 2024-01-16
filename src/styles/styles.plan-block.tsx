@@ -19,6 +19,10 @@ export const HeadingWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 6.9rem;
+
+  &.disabled {
+    opacity: 0.4;
+  }
 `;
 
 export const BlockHeading = styled.h3`

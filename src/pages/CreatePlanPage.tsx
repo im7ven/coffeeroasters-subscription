@@ -1,6 +1,5 @@
 import PlanBlock from "../components/create-plan/PlanBlock";
 import PlanHero from "../components/create-plan/PlanHero";
-import SelectionCardBlock from "../components/create-plan/PreferenceBlock";
 import { ServiceBlock } from "../components/shared/ServiceBlock";
 
 const CreatePlanPage = () => {

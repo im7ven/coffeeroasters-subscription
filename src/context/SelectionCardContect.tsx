@@ -15,9 +15,18 @@ export interface Selection {
   delivery: string;
 }
 
+interface ShipmentPrice {
+  base: number;
+  increment: number;
+  multiplier: number;
+  incrementMultiplier: number;
+}
+
 interface SelectionCardContextValue {
   selection: Selection;
   setSelection: Dispatch<SetStateAction<Selection>>;
+  shipmentPrice: ShipmentPrice;
+  setShipmentPrice: Dispatch<SetStateAction<ShipmentPrice>>;
 }
 
 interface Props {
@@ -29,11 +38,6 @@ const SelectionCardContext = createContext<SelectionCardContextValue>(
 );
 
 export const SelectionCardContextProvider = ({ children }: Props) => {
-  // const [preference, setPreference] = useState("");
-  // const [bean, setBean] = useState("");
-  // const [quantity, setQuantity] = useState("");
-  // const [grind, setGrind] = useState("");
-  // const [delivery, setDelivery] = useState("");
   const [selection, setSelection] = useState<Selection>({
     preference: "_____",
     bean: "_____",
@@ -42,9 +46,18 @@ export const SelectionCardContextProvider = ({ children }: Props) => {
     delivery: "_____",
   });
 
+  const [shipmentPrice, setShipmentPrice] = useState<ShipmentPrice>({
+    base: 0,
+    increment: 0,
+    multiplier: 0,
+    incrementMultiplier: 0,
+  });
+
   const selectionCardContextValue: SelectionCardContextValue = {
     selection,
     setSelection,
+    shipmentPrice,
+    setShipmentPrice,
   };
 
   return (

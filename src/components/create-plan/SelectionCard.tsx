@@ -7,6 +7,7 @@ import {
   darkCyanBg,
   darkGreyBlue,
 } from "../../styles/styles.utilities";
+import { ReactNode } from "react";
 
 const CardContainer = styled.div`
   ${borderRadius}
@@ -56,7 +57,7 @@ const CardDescription = styled.p`
 interface Props {
   cardId: number;
   cardHeading: string;
-  children: string;
+  children: ReactNode;
   onActive: (cardId: number) => void;
   isActive: boolean;
 }

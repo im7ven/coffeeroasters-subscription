@@ -18,21 +18,27 @@ const GrindOptionBlock = () => {
   const handleActivation = (cardId: number) => {
     setActiveCard(cardId);
     if (cardId === 1) {
-      setSelection({ ...selection, quantity: "Wholebean" });
+      setSelection({ ...selection, grind: "Wholebean" });
     } else if (cardId === 2) {
-      setSelection({ ...selection, quantity: "Filter" });
+      setSelection({ ...selection, grind: "Filter" });
     } else {
-      setSelection({ ...selection, quantity: "Cafetiere" });
+      setSelection({ ...selection, grind: "Cafetiere" });
     }
   };
 
   const handleVisibility = () => {
-    setIsExpanded(!isExpanded);
+    if (selection.preference === "Capsules") {
+      setIsExpanded(false);
+    } else {
+      setIsExpanded(!isExpanded);
+    }
   };
 
   return (
     <SelectionContainer>
-      <HeadingWrapper>
+      <HeadingWrapper
+        className={selection.preference === "Capsules" ? "disabled" : ""}
+      >
         <BlockHeading>Want us to grind them?</BlockHeading>
         <ArrowIcon
           className={isExpanded ? "expanded" : ""}
@@ -59,7 +65,7 @@ const GrindOptionBlock = () => {
             For drip or pour-over coffee methods such as V60 or Aeropress
           </SelectionCard>
           <SelectionCard
-            cardHeading="Cafetiere"
+            cardHeading=" ground ala Cafetiere"
             cardId={3}
             onActive={handleActivation}
             isActive={activeCard === 3}
