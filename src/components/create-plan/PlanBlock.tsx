@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import {
   PrimaryBtn,
+  baseBtn,
   block,
   darkCyan,
   darkGreyBlue,
@@ -98,6 +99,23 @@ const ProgressPhase = styled.p`
   }
 `;
 
+const CreatePlanBtn = styled.button`
+  ${baseBtn}
+
+  margin: 5.6rem auto 0;
+  display: block;
+  max-width: 21.7rem;
+  box-sizing: border-box;
+
+  @media screen and (min-width: 768px) {
+    margin: 4rem auto 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 4rem 0 0 auto;
+  }
+`;
+
 const PlanBlock = () => {
   const { selection, shipmentPrice } = useSelection();
 
@@ -107,6 +125,24 @@ const PlanBlock = () => {
         shipmentPrice.base) *
         shipmentPrice.multiplier
     );
+  };
+
+  const isSelectionComplete = () => {
+    if (selection.preference === "Capsules") {
+      const propertyNames = ["preference", "bean", "quantity", "delivery"];
+      return propertyNames.every((p) => selection[p] !== "_____");
+    } else {
+      const propertyNames = [
+        "preference",
+        "bean",
+        "grind",
+        "quantity",
+        "delivery",
+      ];
+      return propertyNames.every((p) => selection[p] !== "_____");
+    }
+
+    // Check if all properties are not equal to "_____"
   };
 
   return (
@@ -147,10 +183,13 @@ const PlanBlock = () => {
       <GrindOptionBlock />
       <DeliveryBlock />
       <OrderSummary {...selection} />
-      <PrimaryBtn className="plan" to="/about-us">
+      <CreatePlanBtn
+        className={`plan`}
+        disabled={!isSelectionComplete()}
+        onClick={() => console.log("HIIII")}
+      >
         create my plan!
-      </PrimaryBtn>
-      <button onClick={() => handleCalculate()}>Calculate Total</button>
+      </CreatePlanBtn>
     </PlanBlockContainer>
   );
 };
