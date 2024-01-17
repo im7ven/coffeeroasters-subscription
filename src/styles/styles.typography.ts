@@ -101,3 +101,8 @@ export const Highlight = styled.p`
   display: inline;
   line-height: 4rem;
 `;
+
+export const selectionText = css`
+  ${h4}
+  ${darkCyan}
+`;
