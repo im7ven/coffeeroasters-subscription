@@ -78,10 +78,10 @@ export const borderRadius = css`
   border-radius: 10px;
 `;
 
-export const PrimaryBtn = styled(Link)`
+export const baseBtn = css`
   ${lightCream}
   ${darkCyanBg}
-  border-radius: 6px;
+border-radius: 6px;
   border: 0;
   outline: 0;
   cursor: pointer;
@@ -93,18 +93,32 @@ export const PrimaryBtn = styled(Link)`
   font-weight: 900;
   line-height: 2.5rem;
 
-  &.secondary {
-    display: block;
-    width: 100%;
+  &:hover {
+    background-color: #66d2cf;
+    transition: 0.3s ease-out;
   }
 
   &.disabled {
     background-color: #e2dedb;
     transition: 0.3s ease-out;
   }
+`;
 
-  &:hover {
-    background-color: #66d2cf;
-    transition: 0.3s ease-out;
+export const PrimaryBtn = styled(Link)`
+  ${baseBtn}
+
+  &.plan {
+    margin: 5.6rem auto 0;
+    display: block;
+    max-width: 21.7rem;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 768px) {
+      margin: 4rem auto 0;
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin: 4rem 0 0 auto;
+    }
   }
 `;

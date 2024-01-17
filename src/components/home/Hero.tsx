@@ -87,7 +87,7 @@ export const Hero = () => {
           your door, at you schedule.
         </BodyText>
         <ButtonWrapper>
-          <PrimaryBtn to="create-plan">Create your plan</PrimaryBtn>
+          <PrimaryBtn to="/create-plan">Create your plan</PrimaryBtn>
         </ButtonWrapper>
       </HeroContent>
     </HeroContainer>
