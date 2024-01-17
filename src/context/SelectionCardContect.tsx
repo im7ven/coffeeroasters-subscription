@@ -13,6 +13,7 @@ export interface Selection {
   quantity: string;
   grind: string;
   delivery: string;
+  [key: string]: string;
 }
 
 interface ShipmentPrice {
