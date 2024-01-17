@@ -107,18 +107,5 @@ border-radius: 6px;
 export const PrimaryBtn = styled(Link)`
   ${baseBtn}
 
-  &.plan {
-    margin: 5.6rem auto 0;
-    display: block;
-    max-width: 21.7rem;
-    box-sizing: border-box;
-
-    @media screen and (min-width: 768px) {
-      margin: 4rem auto 0;
-    }
-
-    @media screen and (min-width: 1024px) {
-      margin: 4rem 0 0 auto;
-    }
   }
 `;
