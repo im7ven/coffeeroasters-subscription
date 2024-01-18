@@ -65,7 +65,7 @@ const GrindOptionBlock = () => {
             For drip or pour-over coffee methods such as V60 or Aeropress
           </SelectionCard>
           <SelectionCard
-            cardHeading=" ground ala Cafetiere"
+            cardHeading="Cafetiere"
             cardId={3}
             onActive={handleActivation}
             isActive={activeCard === 3}
