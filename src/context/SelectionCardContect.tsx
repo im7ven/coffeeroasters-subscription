@@ -21,6 +21,7 @@ interface ShipmentPrice {
   increment: number;
   multiplier: number;
   incrementMultiplier: number;
+  planTotal: number;
 }
 
 interface SelectionCardContextValue {
@@ -28,6 +29,7 @@ interface SelectionCardContextValue {
   setSelection: Dispatch<SetStateAction<Selection>>;
   shipmentPrice: ShipmentPrice;
   setShipmentPrice: Dispatch<SetStateAction<ShipmentPrice>>;
+  handleCalculatePlan: () => void;
 }
 
 interface Props {
@@ -52,13 +54,25 @@ export const SelectionCardContextProvider = ({ children }: Props) => {
     increment: 0,
     multiplier: 0,
     incrementMultiplier: 0,
+    planTotal: 0,
   });
+
+  const handleCalculatePlan = () => {
+    setShipmentPrice({
+      ...shipmentPrice,
+      planTotal:
+        (shipmentPrice.increment * shipmentPrice.incrementMultiplier +
+          shipmentPrice.base) *
+        shipmentPrice.multiplier,
+    });
+  };
 
   const selectionCardContextValue: SelectionCardContextValue = {
     selection,
     setSelection,
     shipmentPrice,
     setShipmentPrice,
+    handleCalculatePlan,
   };
 
   return (
