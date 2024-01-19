@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { darkCyan, darkGreyBlueBg } from "../../styles/styles.utilities";
-import { h4 } from "../../styles/styles.typography";
+import { h4, selectionText } from "../../styles/styles.typography";
 import { useSelection } from "../../context/SelectionCardContect";
 
 const SummaryContainer = styled.article`
@@ -34,6 +34,10 @@ const SummaryDetails = styled.p`
   }
 `;
 
+const SummarySelection = styled.span`
+  ${selectionText}
+`;
+
 interface Props {
   preference: string;
   bean: string;
@@ -52,19 +56,16 @@ const OrderSummary = ({ ...order }: Props) => {
         {selection.preference === "Capsules" && " using "}
         {selection.preference === "Filter" && " as "}
         {selection.preference === "Espresso" && " as "}
-        <SummaryDetails className="selection">
-          {` ${order.preference} `}
-        </SummaryDetails>
-        with a
-        <SummaryDetails className="selection">{` ${order.bean} `}</SummaryDetails>
+        <SummarySelection>{` ${order.preference} `}</SummarySelection>
+        with a<SummarySelection>{` ${order.bean} `}</SummarySelection>
         type of bean.
-        <SummaryDetails className="selection">{` ${order.quantity} `}</SummaryDetails>
+        <SummarySelection>{` ${order.quantity} `}</SummarySelection>
         {selection.preference !== "Capsules" && (
-          <SummaryDetails className="selection">{` ${order.grind} `}</SummaryDetails>
+          <SummarySelection>{` ${order.grind} `}</SummarySelection>
         )}
         , sent to me
-        <SummaryDetails className="selection">{`
-        ${order.delivery}`}</SummaryDetails>
+        <SummarySelection>{`
+        ${order.delivery}`}</SummarySelection>
         ."
       </SummaryDetails>
     </SummaryContainer>
