@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darkCyan, darkGreyBlueBg } from "../../styles/styles.utilities";
+import { darkCyan, darkGreyBlueBg, grey } from "../../styles/styles.utilities";
 import { h4, selectionText } from "../../styles/styles.typography";
 import { useSelection } from "../../context/SelectionCardContect";
 
@@ -13,6 +13,11 @@ const SummaryContainer = styled.article`
 
   @media screen and (min-width: 1024px) {
     padding: 2.7rem 6.4rem;
+  }
+
+  &.modal {
+    background: #fff;
+    padding: 1rem 0;
   }
 `;
 
@@ -32,6 +37,10 @@ const SummaryDetails = styled.p`
     ${darkCyan}
     display: inline;
   }
+
+  &.modal {
+    ${grey}
+  }
 `;
 
 const SummarySelection = styled.span`
@@ -44,14 +53,16 @@ interface Props {
   quantity: string;
   grind: string;
   delivery: string;
+  heading?: string;
+  theme?: string;
 }
 
 const OrderSummary = ({ ...order }: Props) => {
   const { selection } = useSelection();
   return (
-    <SummaryContainer>
-      <SummaryHeading>Order summary</SummaryHeading>
-      <SummaryDetails>
+    <SummaryContainer className={order.theme}>
+      <SummaryHeading>{order.heading}</SummaryHeading>
+      <SummaryDetails className={order.theme}>
         "I drink my coffee
         {selection.preference === "Capsules" && " using "}
         {selection.preference === "Filter" && " as "}
