@@ -102,6 +102,13 @@ border-radius: 6px;
     background-color: #e2dedb;
     transition: 0.3s ease-out;
   }
+
+  &.modal {
+    min-width: 21.7rem;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 auto;
+  }
 `;
 
 export const PrimaryBtn = styled(Link)`
