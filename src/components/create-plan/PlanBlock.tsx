@@ -118,12 +118,13 @@ const CreatePlanBtn = styled.button`
 `;
 
 const PlanBlock = () => {
-  const { selection, shipmentPrice } = useSelection();
+  const { selection, handleCalculatePlan } = useSelection();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
     window.scrollTo(0, 0);
     setIsModalOpen(true);
+    handleCalculatePlan();
   };
 
   const isSelectionComplete = () => {
@@ -140,8 +141,6 @@ const PlanBlock = () => {
       ];
       return propertyNames.every((p) => selection[p] !== "_____");
     }
-
-    // Check if all properties are not equal to "_____"
   };
 
   return (

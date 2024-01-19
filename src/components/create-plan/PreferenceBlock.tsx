@@ -30,9 +30,6 @@ const PreferenceBlock = () => {
     setIsExpanded(!isExpanded);
   };
 
-  console.log(selection);
-  console.log(activeCard);
-
   return (
     <SelectionContainer>
       <HeadingWrapper>

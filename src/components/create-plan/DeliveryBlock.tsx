@@ -46,8 +46,6 @@ const DeliveryBlock = () => {
     setIsExpanded(!isExpanded);
   };
 
-  console.log(shipmentPrice);
-
   return (
     <SelectionContainer>
       <HeadingWrapper>
