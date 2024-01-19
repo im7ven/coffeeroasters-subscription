@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelection } from "../../context/SelectionCardContect";
 import arrowIcon from "../../images/plan/desktop/icon-arrow.svg";
 import {
   ArrowIcon,
@@ -8,7 +9,6 @@ import {
   SelectionContainer,
 } from "../../styles/styles.plan-block";
 import SelectionCard from "./SelectionCard";
-import { useSelection } from "../../context/SelectionCardContect";
 
 const QuantityBlock = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);

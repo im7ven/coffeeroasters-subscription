@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PrimaryBtn, block } from "../../styles/styles.utilities";
+import { PrimaryBtn } from "../../styles/styles.utilities";
 
 const ButtonWrapper = styled.div`
   display: flex;

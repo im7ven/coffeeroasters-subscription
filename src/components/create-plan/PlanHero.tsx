@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { block, borderRadius } from "../../styles/styles.utilities";
 import desktopImg from "../../images/plan/desktop/image-hero-blackcup.jpg";
-import tabletImg from "../../images/plan/tablet/image-hero-blackcup.jpg";
 import mobileImg from "../../images/plan/mobile/image-hero-blackcup.jpg";
+import tabletImg from "../../images/plan/tablet/image-hero-blackcup.jpg";
 import { BodyText, h1 } from "../../styles/styles.typography";
+import { block, borderRadius } from "../../styles/styles.utilities";
 
 const HeroContainer = styled.section`
   ${borderRadius}

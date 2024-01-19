@@ -1,13 +1,13 @@
+import { ReactNode } from "react";
 import styled from "styled-components";
 import { h4, selectionCardInfo } from "../../styles/styles.typography";
 import {
   borderRadius,
-  lightGreyBg,
-  paleOrangeBg,
   darkCyanBg,
   darkGreyBlue,
+  lightGreyBg,
+  paleOrangeBg,
 } from "../../styles/styles.utilities";
-import { ReactNode } from "react";
 
 const CardContainer = styled.div`
   ${borderRadius}

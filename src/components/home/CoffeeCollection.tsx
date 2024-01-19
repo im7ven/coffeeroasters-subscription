@@ -1,6 +1,6 @@
+import { ReactNode } from "react";
 import styled from "styled-components";
 import { baseFont } from "../../styles/styles.typography";
-import { ReactNode } from "react";
 
 const CollectionWrapper = styled.section`
   position: relative;

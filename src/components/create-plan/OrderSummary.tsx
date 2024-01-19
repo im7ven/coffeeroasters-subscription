@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { darkCyan, darkGreyBlueBg, grey } from "../../styles/styles.utilities";
-import { h4, selectionText } from "../../styles/styles.typography";
 import { useSelection } from "../../context/SelectionCardContect";
+import { h4, selectionText } from "../../styles/styles.typography";
+import { darkCyan, darkGreyBlueBg, grey } from "../../styles/styles.utilities";
 
 const SummaryContainer = styled.article`
   ${darkGreyBlueBg}
