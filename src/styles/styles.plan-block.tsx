@@ -38,6 +38,11 @@ export const BlockHeading = styled.h3`
 
 export const ArrowIcon = styled.img`
   transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.15);
+  }
 
   &.expanded {
     transform: rotate(180deg);
