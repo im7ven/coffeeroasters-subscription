@@ -1,6 +1,7 @@
+import { useState } from "react";
 import styled, { css } from "styled-components";
+import { useSelection } from "../../context/SelectionCardContect";
 import {
-  PrimaryBtn,
   baseBtn,
   block,
   darkCyan,
@@ -10,10 +11,10 @@ import {
 import BeanTypeBlock from "./BeanTypeBlock";
 import DeliveryBlock from "./DeliveryBlock";
 import GrindOptionBlock from "./GrindOptionBlock";
+import OrderSummary from "./OrderSummary";
+import PlanModal from "./PlanModal";
 import PreferenceBlock from "./PreferenceBlock";
 import QualityBlock from "./QuantityBlock";
-import OrderSummary from "./OrderSummary";
-import { useSelection } from "../../context/SelectionCardContect";
 
 const PlanBlockContainer = styled.div`
   ${block}
@@ -118,13 +119,11 @@ const CreatePlanBtn = styled.button`
 
 const PlanBlock = () => {
   const { selection, shipmentPrice } = useSelection();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleCalculate = () => {
-    console.log(
-      (shipmentPrice.increment * shipmentPrice.incrementMultiplier +
-        shipmentPrice.base) *
-        shipmentPrice.multiplier
-    );
+  const handleOpenModal = () => {
+    window.scrollTo(0, 0);
+    setIsModalOpen(true);
   };
 
   const isSelectionComplete = () => {
@@ -184,12 +183,16 @@ const PlanBlock = () => {
       <DeliveryBlock />
       <OrderSummary {...selection} />
       <CreatePlanBtn
-        className={`plan`}
+        className={`plan ${!isSelectionComplete() ? "disabled" : ""}`}
         disabled={!isSelectionComplete()}
-        onClick={() => console.log("HIIII")}
+        onClick={() => handleOpenModal()}
       >
         create my plan!
       </CreatePlanBtn>
+      <PlanModal
+        onCloseModal={() => setIsModalOpen(false)}
+        isOpen={isModalOpen}
+      />
     </PlanBlockContainer>
   );
 };
