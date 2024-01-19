@@ -102,7 +102,6 @@ const ProgressPhase = styled.p`
 
 const CreatePlanBtn = styled.button`
   ${baseBtn}
-
   margin: 5.6rem auto 0;
   display: block;
   max-width: 21.7rem;
@@ -180,7 +179,7 @@ const PlanBlock = () => {
       <QualityBlock />
       <GrindOptionBlock />
       <DeliveryBlock />
-      <OrderSummary {...selection} />
+      <OrderSummary {...selection} heading="Order summary" />
       <CreatePlanBtn
         className={`plan ${!isSelectionComplete() ? "disabled" : ""}`}
         disabled={!isSelectionComplete()}
