@@ -71,6 +71,7 @@ const OrderSummary = ({ ...order }: Props) => {
         with a<SummarySelection>{` ${order.bean} `}</SummarySelection>
         type of bean.
         <SummarySelection>{` ${order.quantity} `}</SummarySelection>
+        {selection.grind === "Cafetiere" && " ground ala "}
         {selection.preference !== "Capsules" && (
           <SummarySelection>{` ${order.grind} `}</SummarySelection>
         )}
